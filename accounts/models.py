@@ -1,10 +1,9 @@
 from sqlalchemy import String, Column, DateTime, Boolean
-
 from common_data.mixins import SoftDeleteMixin
-from core.db import Base
+from common_data.models import BaseModel
 
 
-class User(Base,
+class User(BaseModel,
            SoftDeleteMixin):
     username = Column(
         String(length=255),

@@ -1,9 +1,8 @@
 from common_data.mixins import SoftDeleteMixin
-from common_data.models import CommonDataMixin, CreatorDataMixin
-from core.db import Base
+from common_data.models import CommonDataMixin, CreatorDataMixin, BaseModel
 
 
-class Trajectory(Base,
+class Trajectory(BaseModel,
                  CommonDataMixin,
                  SoftDeleteMixin,
                  CreatorDataMixin):

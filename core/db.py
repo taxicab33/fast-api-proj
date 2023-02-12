@@ -14,19 +14,4 @@ engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
-class BaseModel(object):
-
-    @declared_attr
-    def __tablename__(cls):
-        return cls.__name__.lower()
-
-    id = Column(
-        Integer,
-        primary_key=True,
-        index=True,
-        autoincrement=True,
-        unique=True
-    )
-
-
-Base = declarative_base(cls=BaseModel)
+Base = declarative_base()

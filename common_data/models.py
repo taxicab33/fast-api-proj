@@ -2,6 +2,22 @@ from sqlalchemy import Column, String, ForeignKey, Integer
 from sqlalchemy.orm import relationship, declared_attr
 
 from accounts.models import User
+from core.db import Base
+
+
+class BaseModel(Base):
+
+    @declared_attr
+    def __tablename__(cls):
+        return cls.__name__.lower()
+
+    id = Column(
+        Integer,
+        primary_key=True,
+        index=True,
+        autoincrement=True,
+        unique=True
+    )
 
 
 class CommonDataMixin(object):
