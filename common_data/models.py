@@ -19,6 +19,10 @@ class BaseModel(Base):
         unique=True
     )
 
+    @property
+    def pk(self):
+        return self.id
+
 
 class CommonDataMixin(object):
 
